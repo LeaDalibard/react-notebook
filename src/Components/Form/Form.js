@@ -33,16 +33,11 @@ class Form extends Component {
     mySubmitHandler = (e) => {
 
         e.preventDefault()
-        localStorage.setItem('document',JSON.stringify(this.state));
+        localStorage.setItem('note',JSON.stringify(this.state));
         //localStorage.clear();
     }
 
-    // React Life Cycle
-    componentDidMount() {
-        this.documentData = JSON.parse(localStorage.getItem('document'));
-        console.log(this.documentData)
 
-    }
 
     render() {
         return (
