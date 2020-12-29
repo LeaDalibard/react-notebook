@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import ls from 'local-storage'
 
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Form.css'
@@ -28,16 +29,26 @@ class Form extends Component {
         });
     }
 
-
-    mySubmitHandler = () => {
-        alert("You are submitting " + this.state.title);
+    mySubmitHandler = (e) => {
+        e.preventDefault()
+        localStorage.setItem('document',JSON.stringify(this.state));
+        alert("You are submitting " + this.state.title + this.state.subject)
     }
 
+    // React Life Cycle
+    componentDidMount() {
+        this.documentData = JSON.parse(localStorage.getItem('document'));
 
-    render() {
+        if (localStorage.getItem('document')) {
+            console.log(this.documentData)
+        } else {
+            console.log('perdu !')
+        }
+    }
+
+    render(){
         return (
             <form className="form" onSubmit={this.mySubmitHandler}>
-                <h1>Hello {this.state.title} {this.state.content}</h1>
                 <div className="form-group">
                     <label>
                         Title : </label>
