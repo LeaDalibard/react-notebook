@@ -20,23 +20,28 @@ class Form extends Component {
     render() {
         return (
             <form className="form">
-                <p>Title:</p>
-                <input
-                    type='text'
-                    name='title'
-                />
-                <p>Subject:</p>
-                <input
-                    type='text'
-                    name='subject'
-                />
+                <div className="form-group">
+                    <label>
+                        Title : </label>
+                    <input className="form-control"
+                        type='text'
+                        name='title'
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Subject : </label>
+                    <input className="form-control"
+                        type='text'
+                        name='title'
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Content : </label>
+                    <textarea className="form-control" value={this.state.content}/>
+                </div>
 
-                <p>Content:</p>
-                <textarea value={this.state.content}/>
+                <button type="button" className="submit btn-primary btn">SAVE</button>
 
-                <p>
-                    <button type="button" className="submit btn-primary btn">SAVE</button>
-                </p>
 
             </form>
         );
