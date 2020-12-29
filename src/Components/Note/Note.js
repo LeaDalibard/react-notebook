@@ -5,21 +5,17 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Note.css'
 
 class Note extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: 'No title',
-            subject: '',
-            content: 'Write your note',
-            category: '',
-            date: null,
-        };
+    static defaultProps = {
+        title: 'No title',
+        subject: '',
+        content: 'Write your note',
+        category: '',
+        date: null,
     }
 
     render = () => {
-        const {title, subject, content, category, date} = this.state
 
+        const {title, subject, content, category, date} = this.props
 
         return (
             <div className="Note">
