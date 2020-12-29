@@ -13,12 +13,13 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>My notes</h1>
-                {Notes.map(({title,subject,content,date})=>(
+                {Notes.map(({title, subject, content, date}, index) => (
                     <Note
-                    title={title}
-                    subject={subject}
-                    content={content}
-                    date={date}
+                        key={index}
+                        title={title}
+                        subject={subject}
+                        content={content}
+                        date={date}
                     />))}
 
             </div>
