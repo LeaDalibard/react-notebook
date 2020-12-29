@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 import ls from 'local-storage'
 
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -17,36 +16,35 @@ class Form extends Component {
             date: null,
         };
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.mySubmitHandler = this.mySubmitHandler.bind(this);
     }
 
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-
         this.setState({
             [name]: value
         });
+        let date=new Date();
+        this.setState({date: date});
     }
 
     mySubmitHandler = (e) => {
+
         e.preventDefault()
         localStorage.setItem('document',JSON.stringify(this.state));
-        alert("You are submitting " + this.state.title + this.state.subject)
+        //localStorage.clear();
     }
 
     // React Life Cycle
     componentDidMount() {
         this.documentData = JSON.parse(localStorage.getItem('document'));
+        console.log(this.documentData)
 
-        if (localStorage.getItem('document')) {
-            console.log(this.documentData)
-        } else {
-            console.log('perdu !')
-        }
     }
 
-    render(){
+    render() {
         return (
             <form className="form" onSubmit={this.mySubmitHandler}>
                 <div className="form-group">
