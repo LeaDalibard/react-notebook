@@ -34,9 +34,7 @@ class Form extends Component {
     mySubmitHandler = (e) => {
         e.preventDefault()
         const oldnotes = JSON.parse(localStorage.getItem('notes')) || [];
-        console.log(oldnotes)
         oldnotes.push(this.state)
-        console.log(oldnotes)
         localStorage.setItem('notes',JSON.stringify(oldnotes));
         //localStorage.clear();
     }
