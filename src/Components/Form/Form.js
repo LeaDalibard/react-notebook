@@ -5,6 +5,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Form.css'
 
 
+
 class Form extends Component {
     constructor(props) {
         super(props);
@@ -24,20 +25,21 @@ class Form extends Component {
         const value = target.value;
         const name = target.name;
         this.setState({
-            [name]: value
+            [name]:  value
         });
         let date=new Date();
         this.setState({date: date});
     }
 
     mySubmitHandler = (e) => {
-
         e.preventDefault()
-        localStorage.setItem('note',JSON.stringify(this.state));
+        const oldnotes = JSON.parse(localStorage.getItem('notes')) || [];
+        console.log(oldnotes)
+        oldnotes.push(this.state)
+        console.log(oldnotes)
+        localStorage.setItem('notes',JSON.stringify(oldnotes));
         //localStorage.clear();
     }
-
-
 
     render() {
         return (
@@ -75,12 +77,3 @@ class Form extends Component {
 
 export default Form
 
-//  public function addPost(Post $post)
-//     {
-//         $arrayMessage=[];
-//         foreach ($this->posts as $data){
-//             array_push($arrayMessage,$data->export());
-//     }
-//         array_push($arrayMessage, $post->export());
-//         file_put_contents('messages.json', json_encode($arrayMessage, JSON_PRETTY_PRINT));
-//     }
