@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Form.css'
 
 
@@ -29,11 +30,13 @@ class Form extends Component {
                     type='text'
                     name='subject'
                 />
-                <label>
-                    <p>Content:</p>
-                    <textarea value={this.state.content}/>
-                </label>
-                <p><button type="button" className="submit">SAVE</button></p>
+
+                <p>Content:</p>
+                <textarea value={this.state.content}/>
+
+                <p>
+                    <button type="button" className="submit btn-primary btn">SAVE</button>
+                </p>
 
             </form>
         );
