@@ -4,6 +4,7 @@ import Note from "../../Components/Note";
 
 import Notes from "../../Constants/notes";
 import Form from "../../Components/Form";
+import SearchInput from "../../Components/SearchInput";
 
 class App extends Component {
 
@@ -14,7 +15,7 @@ class App extends Component {
     _renderloading = () => {
         let loading = []
 
-        for (let index = 10; index; index--) {
+        for (let index = 9; index; index--) {
             loading.push(<div key={index} className="isLoading"></div>)
         }
         return loading
@@ -25,6 +26,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>My notes</h1>
+                <SearchInput/>
                 <div className="content">
                     {!Notes ? this._renderloading() : Notes.map(({title, subject,category, content, date}, index) => (
                         <Note

@@ -23,7 +23,7 @@ class Note extends Component {
         return (
             <div className="Note">
                 <h3 className="title">{title}</h3>
-                <div>
+                <div className="subinfo">
                     <span className="category">{category}</span>
                     <span className="date">{moment(date).format("LLL")}</span>
                 </div>
