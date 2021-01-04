@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import './App.css';
 import Note from "../../Components/Note";
+
 import Notes from "../../Constants/notes";
+import Form from "../../Components/Form";
 
 class App extends Component {
 
@@ -23,18 +25,20 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>My notes</h1>
-
                 <div className="content">
-                    {!Notes ? this._renderloading() : Notes.map(({title, subject, content, date}, index) => (
+                    {!Notes ? this._renderloading() : Notes.map(({title, subject,category, content, date}, index) => (
                         <Note
                             key={index}
                             title={title}
                             subject={subject}
+                            category={category}
                             content={content}
                             date={date}
                         />))}
 
                 </div>
+                <h2> Add a new note</h2>
+                <Form/>
 
             </div>
         )

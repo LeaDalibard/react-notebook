@@ -14,7 +14,7 @@ class Form extends Component {
             title: '',
             subject: '',
             content: 'Write your note',
-            category: '',
+            category: 'Category',
             date: null,
         };
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -62,6 +62,16 @@ class Form extends Component {
                            value={this.state.subject} onChange={this.handleInputChange}
                     />
                 </div>
+                <div className="form-group">
+                    <select className="category custom-select" value={this.state.category}  name='category' onChange={this.handleInputChange}>
+                        <option selected >Choose a category</option>
+                        <option value="category1">Category 1</option>
+                        <option value="category2">Category 2</option>
+                        <option value="category3">Category 3</option>
+                        <option value="category4">Category 4</option>
+                    </select>
+                </div>
+
                 <div className="form-group">
                     <label>Content : </label>
                     <textarea className="form-control" name='content' value={this.state.content}
