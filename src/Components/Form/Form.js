@@ -38,11 +38,11 @@ class Form extends Component {
         const oldnotes = JSON.parse(localStorage.getItem('notes')) || [];
         oldnotes.push(this.state)
         localStorage.setItem('notes',JSON.stringify(oldnotes));
+        window.location.reload();
         //localStorage.clear();
     }
 
     render() {
-
 
         return (
             <form className="form" onSubmit={this.mySubmitHandler}>
