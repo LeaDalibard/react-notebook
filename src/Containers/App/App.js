@@ -9,18 +9,32 @@ class App extends Component {
         super(props)
     }
 
+    _renderloading = () => {
+        let loading = []
+
+        for (let index = 10; index; index--) {
+            loading.push(<div key={index} className="isLoading"></div>)
+        }
+        return loading
+    }
+
     render = () => {
+
         return (
             <div className="App">
                 <h1>My notes</h1>
-                {Notes.map(({title, subject, content, date}, index) => (
-                    <Note
-                        key={index}
-                        title={title}
-                        subject={subject}
-                        content={content}
-                        date={date}
-                    />))}
+
+                <div className="content">
+                    {!Notes ? this._renderloading() : Notes.map(({title, subject, content, date}, index) => (
+                        <Note
+                            key={index}
+                            title={title}
+                            subject={subject}
+                            content={content}
+                            date={date}
+                        />))}
+
+                </div>
 
             </div>
         )

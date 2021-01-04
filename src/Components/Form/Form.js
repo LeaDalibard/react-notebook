@@ -7,6 +7,8 @@ import './Form.css'
 
 
 class Form extends Component {
+
+
     constructor(props) {
         super(props);
         this.state = {
@@ -40,6 +42,8 @@ class Form extends Component {
     }
 
     render() {
+
+
         return (
             <form className="form" onSubmit={this.mySubmitHandler}>
                 <div className="form-group">
@@ -65,7 +69,7 @@ class Form extends Component {
                               onChange={this.handleInputChange}/>
                 </div>
 
-                <button type="submit" className="submit btn-primary btn">SAVE</button>
+                <button type="submit" className="submit btn-primary btn" >SAVE</button>
 
 
             </form>
