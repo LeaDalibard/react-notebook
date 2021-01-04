@@ -1,6 +1,9 @@
-.App {
+
+.App h1 {
+  margin-bottom: 24px;
   text-align: center;
 }
+
 
 .App .content {
   display: flex;

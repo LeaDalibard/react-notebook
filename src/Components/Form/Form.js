@@ -5,7 +5,6 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Form.css'
 
 
-
 class Form extends Component {
 
 
@@ -27,9 +26,9 @@ class Form extends Component {
         const value = target.value;
         const name = target.name;
         this.setState({
-            [name]:  value
+            [name]: value
         });
-        let date=new Date();
+        let date = new Date();
         this.setState({date: date});
     }
 
@@ -37,7 +36,7 @@ class Form extends Component {
         e.preventDefault()
         const oldnotes = JSON.parse(localStorage.getItem('notes')) || [];
         oldnotes.push(this.state)
-        localStorage.setItem('notes',JSON.stringify(oldnotes));
+        localStorage.setItem('notes', JSON.stringify(oldnotes));
         window.location.reload();
         //localStorage.clear();
     }
@@ -69,7 +68,7 @@ class Form extends Component {
                               onChange={this.handleInputChange}/>
                 </div>
 
-                <button type="submit" className="submit btn-primary btn" >SAVE</button>
+                <button type="submit" className="submit btn-primary btn">SAVE</button>
 
 
             </form>
