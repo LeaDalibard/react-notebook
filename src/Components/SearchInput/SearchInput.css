@@ -18,3 +18,12 @@
     margin-top: 20px;
     /*Tout se met en ligne et quand on arrive à fin du nav passe à la ligne*/
 }
+
+.SearchInput .notesSelected{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom:30px;
+    margin-top: 20px;
+
+}

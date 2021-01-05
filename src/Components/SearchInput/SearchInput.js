@@ -24,7 +24,7 @@ function SearchInput() {
     const results = fuse.search(query);
     const notesResults = query ? results.map(Note => Note.item) : Notes;
 
-    function onSearch({ currentTarget }) {
+    function onSearch({currentTarget}) {
         updateQuery(currentTarget.value);
     }
 
@@ -34,8 +34,10 @@ function SearchInput() {
                 <input className="query" onChange={onSearch} value={query}/>
                 <button type="button" className="submit">SEARCH</button>
             </div>
+            <div className="notesSelected">
+                <SearchByCategory/>
+            </div>
 
-            <SearchByCategory/>
             <div className="notesSearched">
                 {notesResults.map(note => {
                     const {category, title, subject, content, date, index} = note;
