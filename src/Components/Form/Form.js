@@ -65,7 +65,7 @@ class Form extends Component {
                 <div className="form-group">
                     <select className="category custom-select" value={this.state.category} name='category'
                             onChange={this.handleInputChange}>
-                        <option selected>Choose a category</option>
+                        <option defaultValue='Choose a category'>Choose a category</option>
                         <option value="Category 1">Category 1</option>
                         <option value="Category 2">Category 2</option>
                         <option value="Category 3">Category 3</option>
