@@ -27,18 +27,6 @@ class App extends Component {
             <div className="App">
                 <h1>My notes</h1>
                 <SearchInput/>
-                <div className="content">
-                    {!Notes ? this._renderloading() : Notes.map(({title, subject,category, content, date}, index) => (
-                        <Note
-                            key={index}
-                            title={title}
-                            subject={subject}
-                            category={category}
-                            content={content}
-                            date={date}
-                        />))}
-
-                </div>
                 <h2> Add a new note</h2>
                 <Form/>
 
@@ -50,3 +38,13 @@ class App extends Component {
 
 
 export default App;
+
+// {!Notes ? this._renderloading() : Notes.map(({title, subject,category, content, date}, index) => (
+//                         <Note
+//                             key={index}
+//                             title={title}
+//                             subject={subject}
+//                             category={category}
+//                             content={content}
+//                             date={date}
+//                         />))}

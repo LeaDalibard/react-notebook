@@ -7,3 +7,12 @@
     margin-left: 8px;
     margin-bottom: 10px;
 }
+
+.SearchInput .notesSearched{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom:30px;
+    margin-top: 20px;
+    /*Tout se met en ligne et quand on arrive à fin du nav passe à la ligne*/
+}

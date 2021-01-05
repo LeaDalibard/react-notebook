@@ -27,16 +27,12 @@ function SearchInput() {
         updateQuery(currentTarget.value);
     }
 
-    //console.log(results);
-    //console.log(Notes);
-    console.log(notesResults)
-
     return (
         <div className="SearchInput">
             <input className="query" onChange={onSearch} value={query}/>
             <button type="button" className="submit">SEARCH</button>
 
-            <ul className="notesSearch">
+            <div className="notesSearched">
                 {notesResults.map(note => {
                     const {category, title, subject, content, date, index} = note;
 
@@ -51,7 +47,7 @@ function SearchInput() {
                         />
                     )
                 })}
-            </ul>
+            </div>
         </div>
     )
 
