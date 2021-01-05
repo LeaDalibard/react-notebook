@@ -4,6 +4,7 @@ import './SearchInput.css'
 import Fuse from 'fuse.js';
 import Notes from "../../Constants/notes";
 import Note from "../../Components/Note";
+import SearchByCategory from "../SearchByCategory";
 
 function SearchInput() {
     const [query, updateQuery] = useState('');
@@ -29,9 +30,12 @@ function SearchInput() {
 
     return (
         <div className="SearchInput">
-            <input className="query" onChange={onSearch} value={query}/>
-            <button type="button" className="submit">SEARCH</button>
+            <div className='searchBtn'>
+                <input className="query" onChange={onSearch} value={query}/>
+                <button type="button" className="submit">SEARCH</button>
+            </div>
 
+            <SearchByCategory/>
             <div className="notesSearched">
                 {notesResults.map(note => {
                     const {category, title, subject, content, date, index} = note;

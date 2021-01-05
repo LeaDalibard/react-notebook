@@ -6,6 +6,7 @@ import Notes from "../../Constants/notes";
 import Form from "../../Components/Form";
 import SearchInput from "../../Components/SearchInput";
 
+
 class App extends Component {
 
     constructor(props) {
