@@ -5,9 +5,10 @@
 - Team challenge : `solo`
 
 ## Learning objectives
--
--
--
+-Learn react basics
+- Learn to make React Components
+- Intro to Hooks
+
 
 ## Source : 
 
@@ -19,12 +20,15 @@ Taking notes is a great way to make sure we keep track of our thoughts or rememb
 
 ## Must-have features
 
-- Create a form
-- Store new notes
-- List notes
-- Add tags or categories
-- Add note search
-- Add note network
+- [x] Create a form
+- [x] Store new notes
+- [x] List notes
+
+## Extra
+
+- [x] Add tags or categories
+- [ ] Add note search
+- [ ] Add note network
 
 
 ### Tips & Advice
